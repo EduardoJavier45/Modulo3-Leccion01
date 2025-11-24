@@ -731,7 +731,7 @@ Después de estudiar este proyecto, entenderás:
 
 ¿Encontraste un error o mejora? ¡Contáctame!
 
-- 📧 Email: contacto@ejemplo.com
+- 📧 Email: eduardojavierp1980@gmail.com
 - 🐙 GitHub: [@EduardoJavier45](https://github.com/EduardoJavier45)
 - 💼 LinkedIn: Eduardo Javier
 

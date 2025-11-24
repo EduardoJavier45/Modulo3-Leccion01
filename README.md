@@ -733,7 +733,7 @@ Después de estudiar este proyecto, entenderás:
 
 - 📧 Email: eduardojavierp1980@gmail.com
 - 🐙 GitHub: [@EduardoJavier45](https://github.com/EduardoJavier45)
-- 💼 LinkedIn: Eduardo Javier
+- 💼 LinkedIn: [Eduardo Javier Pérez Espíndola](https://www.linkedin.com/in/eduardo-javier-p%C3%A9rez-esp%C3%ADndola-610136162)
 
 ---
 
@@ -782,7 +782,7 @@ Este proyecto demuestra cómo aplicar **metodologías CSS profesionales** en un 
 ### 🌐 Redes Sociales
 
 [![GitHub](https://img.shields.io/badge/GitHub-EduardoJavier45-000?logo=github)](https://github.com/EduardoJavier45)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Eduardo_Javier-0A66C2?logo=linkedin)](https://www.linkedin.com/in/eduardo-javier-p%C3%A9rez-esp%C3%ADndola-610136162)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Eduardo_Javier_Pérez_Espíndola-0A66C2?logo=linkedin)](https://www.linkedin.com/in/eduardo-javier-p%C3%A9rez-esp%C3%ADndola-610136162)
 [![Twitter](https://img.shields.io/badge/Twitter-@Eduardojavier31-1DA1F2?logo=twitter)](https://twitter.com/Eduardojavier31)
 [![Instagram](https://img.shields.io/badge/Instagram-tesorosdelaspulgas-E1306C?logo=instagram)](https://instagram.com/tesorosdelaspulgas)
 

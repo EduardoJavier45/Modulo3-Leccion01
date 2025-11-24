@@ -1,4 +1,4 @@
-# 📚 Módulo 2 - Video: Metodologías CSS (BEM, OOCSS, SMACSS)
+# 📚 MÓDULO 3: DESARROLLO DE LA INTERFAZ DE USUARIO WEB - Metodologías CSS
 
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
@@ -16,6 +16,28 @@ Este es un proyecto educativo completo que enseña las **mejores prácticas mode
 - ✅ **Buenas Prácticas** - Recomendaciones profesionales
 - ✅ **Comparación de Metodologías** - Matriz comparativa
 - ✅ **Ejemplos de Código** - Código real y ejecutable
+- ✅ **Imagen Ilustrativa** - Hero section con imagen de tecnología
+- ✅ **Footer Semántico** - Créditos con iconos de tecnologías
+
+---
+
+## 🆕 Cambios Recientes
+
+### Actualización v2.0 (Noviembre 2025)
+
+✨ **Mejoras Implementadas:**
+
+- ✅ **Actualización de Título**: Módulo renombrado a "MÓDULO 3: DESARROLLO DE LA INTERFAZ DE USUARIO WEB"
+- ✅ **Hero Section Mejorado**:
+  - Gradiente oscuro más profesional (`#0a3d66` a `#051a2e`)
+  - Imagen ilustrativa de tecnología (`technology-1283624_1920.jpg`)
+  - Mejor contraste y legibilidad
+- ✅ **Footer Actualizado**:
+  - Iconos de tecnologías con Bootstrap Icons (HTML5, CSS3, JavaScript)
+  - Colores semánticos (rojo para HTML, azul para CSS, amarillo para JavaScript)
+  - Enlaces de redes sociales (GitHub, LinkedIn, Twitter, Instagram)
+- ✅ **Integración de Imagen**: Carpeta `ASSETS/img/` con recursos visuales
+- ✅ **Mejor Presentación**: Diseño más profesional y moderno
 
 ---
 
@@ -38,7 +60,10 @@ Este es un proyecto educativo completo que enseña las **mejores prácticas mode
 - Modales interactivos
 - Cards con efectos hover
 - Smooth scroll entre secciones
-- Footer con enlaces rápidos
+- Footer con enlaces rápidos y redes sociales
+- Hero section con imagen ilustrativa
+- Gradiente profesional en fondo
+- Iconos de tecnologías con Bootstrap Icons
 
 ### 💻 Código Limpio
 
@@ -49,11 +74,14 @@ Este es un proyecto educativo completo que enseña las **mejores prácticas mode
 
 ### 🎨 Diseño Visual
 
-- Colores profesionales
-- Tipografía clara
-- Espaciado consistente
-- Iconos Bootstrap Icons
-- Gradientes moderno
+- Colores profesionales con gradientes modernos
+- Tipografía clara y legible
+- Espaciado consistente (Bootstrap grid)
+- Iconos Bootstrap Icons (v1.11.1)
+- Gradientes oscuros y degradados profesionales
+- Sombras y efectos hover suaves
+- Imagen ilustrativa en hero section
+- Contraste optimizado para accesibilidad
 
 ---
 
@@ -62,18 +90,21 @@ Este es un proyecto educativo completo que enseña las **mejores prácticas mode
 ```
 Ejercicio - Modulo 3 - L1/
 │
-├── index.html                    # Página principal
+├── index.html                              # Página principal
 │
 ├── ASSETS/
 │   ├── css/
-│   │   └── styles.css           # Estilos personalizados comentados
+│   │   └── styles.css                     # Estilos personalizados comentados
 │   │
 │   ├── js/
-│   │   └── script.js            # JavaScript comentado y funcional
+│   │   └── script.js                      # JavaScript comentado y funcional
 │   │
-│   └── img/                     # Carpeta para imágenes
+│   └── img/
+│       └── technology-1283624_1920.jpg    # Imagen hero section
 │
-└── README.md                    # Este archivo
+├── README.md                              # Este archivo
+│
+└── .git/                                  # Control de versiones
 ```
 
 ---
@@ -629,9 +660,17 @@ El proyecto es **mobile-first** y responsive:
 
 ### 🏠 Hero Section
 
-- Introducción visual
+**Características**:
+
+- Imagen ilustrativa de tecnología responsive
+- Gradiente oscuro profesional (`#0a3d66` → `#051a2e`)
+- Título principal destacado
+- Subtítulo con descripción de las metodologías
 - Botones de acción (CTA)
-- Imagen ilustrativa
+  - "Comenzar Ahora" → dirige a BEM
+  - "Más Información" → abre modal educativo
+- Diseño full-height responsive
+- Iconografía con Bootstrap Icons
 
 ### 📦 BEM Section
 
@@ -735,14 +774,29 @@ Este proyecto demuestra cómo aplicar **metodologías CSS profesionales** en un 
 
 ## ⭐ Si te gustó este proyecto, ¡Dale una estrella! ⭐
 
-**Hecho con ❤️ y ☕ por Eduardo Javier**
+**Hecho con ❤️ y ☕ por Eduardo Javier Pérez Espíndola**
 
-**Módulo 2 - Video: Metodologías CSS**
+**MÓDULO 3: DESARROLLO DE LA INTERFAZ DE USUARIO WEB**
+**Metodologías CSS (BEM, OOCSS, SMACSS)**
+
+### 🌐 Redes Sociales
+
+[![GitHub](https://img.shields.io/badge/GitHub-EduardoJavier45-000?logo=github)](https://github.com/EduardoJavier45)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Eduardo_Javier-0A66C2?logo=linkedin)](https://www.linkedin.com/in/eduardo-javier-p%C3%A9rez-esp%C3%ADndola-610136162)
+[![Twitter](https://img.shields.io/badge/Twitter-@Eduardojavier31-1DA1F2?logo=twitter)](https://twitter.com/Eduardojavier31)
+[![Instagram](https://img.shields.io/badge/Instagram-tesorosdelaspulgas-E1306C?logo=instagram)](https://instagram.com/tesorosdelaspulgas)
+
+### 🛠️ Tecnologías Utilizadas
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)
 ![SASS](https://img.shields.io/badge/SASS-CC6699?logo=sass&logoColor=white)
+
+**Desarrollado con**
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
 </div>

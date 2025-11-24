@@ -128,8 +128,8 @@ body {
 
 // Contenedor hero
 .hero {
-  // Gradiente de fondo
-  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%) !important;
+  // Gradiente de fondo más oscuro
+  background: linear-gradient(135deg, #0a3d66 0%, #051a2e 100%) !important;
   position: relative;
   overflow: hidden;
 }

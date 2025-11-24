@@ -1,0 +1,578 @@
+// ============================================
+// ESTILOS PERSONALIZADOS - CSS METHODOLOGIES
+// ============================================
+
+// ============================================
+// VARIABLES CSS - Colores y tamaños
+// ============================================
+
+// Paleta de colores primaria
+:root {
+  // Colores principales
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
+
+  // Colores neutrales
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --white: #ffffff;
+  --black: #000000;
+
+  // Transiciones
+  --transition: all 0.3s ease;
+
+  // Sombras
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+// ============================================
+// ESTILOS GLOBALES - Reset y base
+// ============================================
+
+* {
+  // Aplicar box-sizing a todos los elementos
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Scroll suave en toda la página
+html {
+  scroll-behavior: smooth;
+}
+
+// Estilos del body
+body {
+  // Tipografía
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: var(--white);
+
+  // Transición de color
+  transition: var(--transition);
+}
+
+// ============================================
+// HEADER Y NAVBAR - Estilos de navegación
+// ============================================
+
+// Estilos del navbar
+.navbar {
+  // Efecto sombra al hacer sticky
+  transition: var(--transition);
+
+  // Cuando está en sticky, agregamos sombra
+  &.sticky-top {
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+// Estilos de la marca (logo)
+.navbar-brand {
+  // Tamaño y peso
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  // Transición de escala
+  transition: var(--transition);
+}
+
+// Efecto hover en la marca
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+// Estilos de los enlaces de navegación
+.nav-link {
+  // Peso de fuente
+  font-weight: 500;
+  transition: var(--transition);
+  padding: 0.5rem 1rem !important;
+
+  // Posición relativa para pseudoelemento
+  position: relative;
+}
+
+// Pseudoelemento para efecto subrayado
+.nav-link::after {
+  // Posición y dimensiones
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--white);
+
+  // Transición del ancho
+  transition: width var(--transition);
+}
+
+// Efecto hover y activo
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 80%;
+}
+
+// ============================================
+// SECCIÓN HERO - Estilos de la portada
+// ============================================
+
+// Contenedor hero
+.hero {
+  // Gradiente de fondo
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+// Pseudoelemento decorativo en el hero
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,133.3C672,117,768,107,864,122.7C960,139,1056,181,1152,181.3C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-size: cover;
+  background-position: bottom;
+  opacity: 0.3;
+}
+
+// Contenedor interno del hero
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+// Altura mínima para sección
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+// ============================================
+// CARDS - Estilos de tarjetas
+// ============================================
+
+// Estilos base de las cards
+.card {
+  // Transiciones suaves
+  transition: var(--transition);
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+}
+
+// Efecto hover en cards
+.card:hover {
+  // Elevación visual
+  transform: translateY(-10px);
+
+  // Sombra mejorada
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+// Clase auxiliar para efecto lift
+.hover-lift {
+  transition: var(--transition);
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+}
+
+// Estilos de imagen en cards
+.card-img-top {
+  // Transición
+  transition: var(--transition);
+
+  // Altura fija y object-fit
+  height: 250px;
+  object-fit: cover;
+}
+
+// Efecto zoom en imágenes al hover de card
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+// ============================================
+// ICONOS - Estilos de iconos decorativos
+// ============================================
+
+// Contenedor de icono decorativo
+.feature-icon {
+  // Dimensiones
+  width: 80px;
+  height: 80px;
+
+  // Tamaño de fuente
+  font-size: 2.5rem;
+
+  // Transición
+  transition: var(--transition);
+}
+
+// Efecto de rotación al hover
+.card:hover .feature-icon {
+  transform: rotate(360deg);
+}
+
+// ============================================
+// BADGES - Estilos de etiquetas
+// ============================================
+
+.badge {
+  // Peso y padding
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+// ============================================
+// BOTONES - Estilos de botones
+// ============================================
+
+.btn {
+  // Propiedades de fuente y borde
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+// Botón primario
+.btn-primary {
+  // Gradiente
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+  border: none;
+}
+
+// Hover del botón primario
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0a58ca 0%, #0842a0 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+}
+
+// Botón outline
+.btn-outline-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2);
+}
+
+// Botón light
+.btn-light {
+  border: 2px solid var(--white);
+}
+
+.btn-light:hover {
+  background-color: transparent !important;
+  color: var(--white) !important;
+  border-color: var(--white);
+}
+
+// Botón outline light
+.btn-outline-light:hover {
+  background-color: var(--white) !important;
+  color: var(--primary-color) !important;
+}
+
+// ============================================
+// FORMULARIOS - Estilos de inputs
+// ============================================
+
+.form-control,
+.form-select {
+  // Borde y padding
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+  padding: 0.75rem 1rem;
+  transition: var(--transition);
+}
+
+// Focus en inputs
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+// Etiquetas de formulario
+.form-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+}
+
+// ============================================
+// SOMBRAS PERSONALIZADAS
+// ============================================
+
+.shadow-sm {
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.shadow {
+  box-shadow: var(--shadow) !important;
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg) !important;
+}
+
+// ============================================
+// FOOTER - Estilos del pie de página
+// ============================================
+
+footer {
+  // Color de fondo oscuro
+  background-color: #1a1d29 !important;
+}
+
+// Estilos de enlaces en footer
+footer a {
+  transition: var(--transition);
+}
+
+// Hover en enlaces del footer
+footer a:hover {
+  color: var(--primary-color) !important;
+  transform: translateX(5px);
+}
+
+// Botones outline en footer
+footer .btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+footer .btn-outline-light:hover {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  transform: translateY(-2px);
+}
+
+// ============================================
+// MODAL - Estilos de modales
+// ============================================
+
+.modal-content {
+  border-radius: 15px;
+  border: none;
+}
+
+// Encabezado del modal
+.modal-header {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+  color: var(--white);
+  border-radius: 15px 15px 0 0;
+}
+
+// Botón close del modal
+.modal-header .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+// ============================================
+// TABLAS - Estilos de tablas
+// ============================================
+
+.table {
+  // Bordes y espaciado
+  border-collapse: collapse;
+  margin-bottom: 0;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+// ============================================
+// CÓDIGO - Estilos para bloques de código
+// ============================================
+
+code {
+  // Tipografía monoespaciada
+  font-family: "Courier New", monospace;
+  font-size: 0.875rem;
+}
+
+pre {
+  // Fondo oscuro
+  background-color: #282c34 !important;
+  color: #abb2bf;
+  padding: 1.5rem !important;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+// ============================================
+// UTILIDADES - Clases auxiliares
+// ============================================
+
+// Clase para texto muted (atenuado)
+.text-muted {
+  color: #6c757d !important;
+}
+
+// Clase para fondo claro
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+// ============================================
+// RESPONSIVE - Media queries
+// ============================================
+
+// Tablet y dispositivos grandes
+@media (max-width: 991px) {
+  // Hero section responsive
+  .hero {
+    text-align: center;
+  }
+
+  .hero .display-3 {
+    font-size: 2.5rem;
+  }
+
+  // Navbar collapse
+  .navbar-collapse {
+    background-color: rgba(13, 110, 253, 0.95);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+
+  // Remover pseudoelemento de nav en mobile
+  .nav-link::after {
+    display: none;
+  }
+
+  // Iconos más pequeños
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+// Mobile
+@media (max-width: 767px) {
+  // Tamaños de fuente responsivos
+  .hero .display-3 {
+    font-size: 2rem;
+  }
+
+  .display-5 {
+    font-size: 2rem;
+  }
+
+  // Botones full width en mobile
+  .btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  // Imágenes en cards
+  .card-img-top {
+    height: 200px;
+  }
+
+  // Botones en fila con gap
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  // Flexbox con direction column en mobile
+  .d-flex.gap-3 {
+    flex-direction: column;
+    gap: 0.5rem !important;
+  }
+}
+
+// Extra pequeño
+@media (max-width: 576px) {
+  // Títulos más pequeños
+  .hero .display-3 {
+    font-size: 1.75rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  // Padding reducido
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+// ============================================
+// ANIMACIONES PERSONALIZADAS
+// ============================================
+
+// Animación fade in up
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Clase para aplicar animación
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+// Animación pulse
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+// ============================================
+// CLASES DE UTILIDAD ADICIONALES
+// ============================================
+
+// Ocultar elemento en mobile
+.d-none-mobile {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .d-none-mobile {
+    display: block !important;
+  }
+}
+
+// Margen personalizado
+.my-custom {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+// Padding personalizado
+.p-custom {
+  padding: 2rem;
+}

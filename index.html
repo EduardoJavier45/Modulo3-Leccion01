@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Declaración de encoding UTF-8 -->
+    <meta charset="UTF-8" />
+    <!-- Viewport para responsividad en dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Descripción de la página para SEO -->
+    <meta
+      name="description"
+      content="Módulo 2 - Video: Metodologías CSS (BEM, OOCSS, SMACSS) - Buenas Prácticas"
+    />
+    <!-- Autor del proyecto -->
+    <meta name="author" content="Eduardo Javier" />
+    <!-- Título de la página -->
+    <title>Módulo 2 - Video: BEM, OOCSS, SMACSS | CSS Buenas Prácticas</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
+    <!-- Enlace a estilos personalizados -->
+    <link rel="stylesheet" href="ASSETS/css/styles.css" />
+  </head>
+  <body>
+    <!-- ============================================
+         HEADER Y NAVEGACIÓN PRINCIPAL
+         ============================================ -->
+    <header>
+      <!-- Navegación principal con Bootstrap navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+          <!-- Logo y marca de la página -->
+          <a class="navbar-brand fw-bold" href="#home">
+            <i class="bi bi-code-slash me-2"></i>
+            Módulo 2 - CSS Methodologies
+          </a>
+          <!-- Botón toggle para dispositivos móviles -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Menú de navegación colapsable -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <!-- Enlace a sección inicio -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#home"
+                  >Inicio</a
+                >
+              </li>
+              <!-- Enlace a sección BEM -->
+              <li class="nav-item">
+                <a class="nav-link" href="#bem">BEM</a>
+              </li>
+              <!-- Enlace a sección OOCSS -->
+              <li class="nav-item">
+                <a class="nav-link" href="#oocss">OOCSS</a>
+              </li>
+              <!-- Enlace a sección SMACSS -->
+              <li class="nav-item">
+                <a class="nav-link" href="#smacss">SMACSS</a>
+              </li>
+              <!-- Enlace a sección de buenas prácticas -->
+              <li class="nav-item">
+                <a class="nav-link" href="#buenas-practicas"
+                  >Buenas Prácticas</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ============================================
+         CONTENIDO PRINCIPAL
+         ============================================ -->
+    <main>
+      <!-- ==========================================
+           SECCIÓN HERO - INICIO
+           ========================================== -->
+      <section id="home" class="hero bg-primary text-white py-5">
+        <div class="container">
+          <!-- Grid 2 columnas responsive -->
+          <div class="row align-items-center min-vh-100">
+            <!-- Columna izquierda con contenido de texto -->
+            <div class="col-lg-6 mb-4 mb-lg-0">
+              <!-- Título principal de la página -->
+              <h1 class="display-3 fw-bold mb-4">
+                Módulo 2 - Video: Metodologías CSS
+              </h1>
+              <!-- Subtítulo y descripción -->
+              <p class="lead mb-4">
+                Aprende las mejores prácticas de organización de estilos CSS:
+                <strong>BEM</strong>, <strong>OOCSS</strong> y
+                <strong>SMACSS</strong>. Descubre cómo estructurar tu CSS de
+                manera escalable, mantenible y profesional usando metodologías
+                probadas.
+              </p>
+              <!-- Botones de acción CTA -->
+              <div class="d-flex gap-3 flex-wrap">
+                <!-- Botón principal que dirige a sección BEM -->
+                <a href="#bem" class="btn btn-light btn-lg">
+                  <i class="bi bi-play-circle me-2"></i>
+                  Comenzar Ahora
+                </a>
+                <!-- Botón secundario que abre modal -->
+                <button
+                  type="button"
+                  class="btn btn-outline-light btn-lg"
+                  data-bs-toggle="modal"
+                  data-bs-target="#infoModal"
+                >
+                  <i class="bi bi-info-circle me-2"></i>
+                  Más Información
+                </button>
+              </div>
+            </div>
+            <!-- Columna derecha con imagen -->
+            <div class="col-lg-6">
+              <!-- Imagen ilustrativa responsive -->
+              <img
+                src="https://via.placeholder.com/600x400/0d6efd/ffffff?text=CSS+Methodologies"
+                alt="Metodologías CSS"
+                class="img-fluid rounded shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SECCIÓN BEM (Block Element Modifier)
+           ========================================== -->
+      <section id="bem" class="py-5 bg-light">
+        <div class="container">
+          <!-- Encabezado de la sección -->
+          <div class="row text-center mb-5">
+            <div class="col">
+              <!-- Título de la sección -->
+              <h2 class="display-5 fw-bold mb-3">
+                <i class="bi bi-box-seam me-2"></i>BEM - Block Element Modifier
+              </h2>
+              <!-- Descripción de BEM -->
+              <p class="lead text-muted">
+                Una metodología para nombrar clases CSS de forma consistente y
+                escalable
+              </p>
+            </div>
+          </div>
+
+          <!-- Grid con contenido de BEM -->
+          <div class="row g-4">
+            <!-- Card para explicación de BEM -->
+            <div class="col-lg-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <!-- Icono de la card -->
+                  <div
+                    class="bg-primary text-white rounded p-3 mb-3 d-inline-block"
+                  >
+                    <i class="bi bi-cube fs-4"></i>
+                  </div>
+                  <!-- Título de la card -->
+                  <h5 class="card-title fw-bold">¿Qué es BEM?</h5>
+                  <!-- Descripción de BEM -->
+                  <p class="card-text text-muted">
+                    BEM es una metodología que divide el CSS en tres conceptos:
+                    Bloques (componentes independientes), Elementos (partes del
+                    bloque) y Modificadores (variaciones).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card para ventajas de BEM -->
+            <div class="col-lg-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <!-- Icono de la card -->
+                  <div
+                    class="bg-success text-white rounded p-3 mb-3 d-inline-block"
+                  >
+                    <i class="bi bi-check-circle fs-4"></i>
+                  </div>
+                  <!-- Título de la card -->
+                  <h5 class="card-title fw-bold">Ventajas</h5>
+                  <!-- Lista de ventajas -->
+                  <ul class="list-unstyled text-muted small">
+                    <!-- Ventaja: Legibilidad -->
+                    <li class="mb-2">
+                      <i class="bi bi-check text-success me-2"></i>
+                      Código altamente legible
+                    </li>
+                    <!-- Ventaja: Reutilización -->
+                    <li class="mb-2">
+                      <i class="bi bi-check text-success me-2"></i>
+                      Fácil reutilización de componentes
+                    </li>
+                    <!-- Ventaja: Escalabilidad -->
+                    <li class="mb-2">
+                      <i class="bi bi-check text-success me-2"></i>
+                      Escalable a proyectos grandes
+                    </li>
+                    <!-- Ventaja: Mantenimiento -->
+                    <li class="mb-2">
+                      <i class="bi bi-check text-success me-2"></i>
+                      Fácil mantenimiento
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card para ejemplo de código BEM -->
+            <div class="col-lg-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <!-- Icono de la card -->
+                  <div
+                    class="bg-warning text-white rounded p-3 mb-3 d-inline-block"
+                  >
+                    <i class="bi bi-code fs-4"></i>
+                  </div>
+                  <!-- Título de la card -->
+                  <h5 class="card-title fw-bold">Nomenclatura</h5>
+                  <!-- Ejemplo de nomenclatura BEM -->
+                  <code class="d-block bg-dark text-light p-3 rounded small">
+                    <!-- Bloque: button -->
+                    .button { }
+                    <br />
+                    <!-- Elemento: button__icon -->
+                    .button__icon { }
+                    <br />
+                    <!-- Modificador: button--primary -->
+                    .button--primary { }
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ejemplo de código BEM completo -->
+          <div class="row mt-5">
+            <div class="col-12">
+              <!-- Card para ejemplo HTML de BEM -->
+              <div class="card border-0 shadow">
+                <div class="card-header bg-primary text-white">
+                  <!-- Encabezado del ejemplo -->
+                  <h6 class="mb-0">
+                    <i class="bi bi-code-square me-2"></i>
+                    Ejemplo de código HTML con BEM
+                  </h6>
+                </div>
+                <!-- Contenido del ejemplo -->
+                <div class="card-body">
+                  <!-- Pre para código -->
+                  <pre
+                    class="bg-dark text-light p-3 rounded"
+                  ><span class="text-info">&lt;!-- Componente Button con BEM --&gt;</span>
+<span class="text-info">&lt;button class="button button--primary"&gt;</span>
+  <span class="text-info">&lt;!-- Elemento icono dentro del botón --&gt;</span>
+  <span class="text-info">&lt;i class="button__icon"&gt;&lt;/i&gt;</span>
+  <span class="text-warning">Guardar Cambios</span>
+<span class="text-info">&lt;/button&gt;</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SECCIÓN OOCSS
+           ========================================== -->
+      <section id="oocss" class="py-5">
+        <div class="container">
+          <!-- Encabezado de la sección -->
+          <div class="row text-center mb-5">
+            <div class="col">
+              <!-- Título de la sección -->
+              <h2 class="display-5 fw-bold mb-3">
+                <i class="bi bi-diagram-2 me-2"></i>OOCSS - Object Oriented CSS
+              </h2>
+              <!-- Descripción de OOCSS -->
+              <p class="lead text-muted">
+                Separación de estructura y presentación para CSS orientado a
+                objetos
+              </p>
+            </div>
+          </div>
+
+          <!-- Grid con contenido de OOCSS -->
+          <div class="row g-4">
+            <!-- Card para explicación de OOCSS -->
+            <div class="col-lg-6">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <!-- Título de la card -->
+                  <h5 class="card-title fw-bold mb-3">
+                    <i class="bi bi-diagram-2 text-success me-2"></i>Principios
+                    OOCSS
+                  </h5>
+                  <!-- Contenido con dos principios principales -->
+                  <div class="mb-4">
+                    <!-- Principio 1 -->
+                    <h6 class="fw-bold text-primary mb-2">
+                      1. Separar Estructura y Presentación
+                    </h6>
+                    <!-- Explicación del principio 1 -->
+                    <p class="text-muted small mb-3">
+                      Crea clases reutilizables que describan solo la
+                      estructura, separadas de las clases que describen el
+                      estilo visual.
+                    </p>
+                  </div>
+                  <!-- Principio 2 -->
+                  <div>
+                    <h6 class="fw-bold text-primary mb-2">
+                      2. Separar Contenedor e Hijo
+                    </h6>
+                    <!-- Explicación del principio 2 -->
+                    <p class="text-muted small">
+                      Los estilos no deben depender de la ubicación. Un
+                      componente debe verse igual independientemente de dónde
+                      esté.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card para ejemplo de código OOCSS -->
+            <div class="col-lg-6">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <!-- Encabezado del ejemplo -->
+                  <h5 class="card-title fw-bold mb-3">
+                    <i class="bi bi-code text-warning me-2"></i>Ejemplo OOCSS
+                  </h5>
+                  <!-- Ejemplo de código OOCSS -->
+                  <pre
+                    class="bg-dark text-light p-3 rounded small"
+                  ><span class="text-info">/* Estructura reutilizable */</span>
+.container { }
+
+<span class="text-info">/* Presentación reutilizable */</span>
+.bg-primary { }
+.text-white { }
+.rounded { }
+
+<span class="text-info">/* Combinar en HTML */</span>
+&lt;div class="container bg-primary 
+      text-white rounded"&gt;&lt;/div&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SECCIÓN SMACSS
+           ========================================== -->
+      <section id="smacss" class="py-5 bg-light">
+        <div class="container">
+          <!-- Encabezado de la sección -->
+          <div class="row text-center mb-5">
+            <div class="col">
+              <!-- Título de la sección -->
+              <h2 class="display-5 fw-bold mb-3">
+                <i class="bi bi-layers me-2"></i>SMACSS - Scalable and Modular
+                Architecture
+              </h2>
+              <!-- Descripción de SMACSS -->
+              <p class="lead text-muted">
+                Arquitectura escalable y modular basada en categorías de CSS
+              </p>
+            </div>
+          </div>
+
+          <!-- Grid con categorías de SMACSS -->
+          <div class="row g-4">
+            <!-- Card para Base -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <!-- Icono de la card -->
+                  <div
+                    class="bg-info text-white rounded p-3 mb-3 d-inline-block"
+                  >
+                    <i class="bi bi-1-circle fs-4"></i>
+                  </div>
+                  <!-- Título de la categoría -->
+                  <h5 class="card-title fw-bold">Base</h5>
+                  <!-- Descripción de la categoría -->
+                  <p class="card-text text-muted small">
+                    Estilos por defecto para elementos HTML (body, h1, p, a,
+                    etc.) Incluye reset.css y normalización.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card para Layout -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <!-- Icono de la card -->
+                  <div
+                    class="bg-success text-white rounded p-3 mb-3 d-inline-block"
+                  >
+                    <i class="bi bi-2-circle fs-4"></i>
+                  </div>
+                  <!-- Título de la categoría -->
+                  <h5 class="card-title fw-bold">Layout</h5>
+                  <!-- Descripción de la categoría -->
+                  <p class="card-text text-muted small">
+                    Estilos para la estructura general del sitio (header,
+                    footer, grid, etc.) Componentes macro del layout.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card para Module -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <!-- Icono de la card -->
+                  <div
+                    class="bg-warning text-white rounded p-3 mb-3 d-inline-block"
+                  >
+                    <i class="bi bi-3-circle fs-4"></i>
+                  </div>
+                  <!-- Título de la categoría -->
+                  <h5 class="card-title fw-bold">Module</h5>
+                  <!-- Descripción de la categoría -->
+                  <p class="card-text text-muted small">
+                    Componentes reutilizables (botones, cards, modales, etc.)
+                    Los elementos más comunes y modulares.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card para State -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <!-- Icono de la card -->
+                  <div
+                    class="bg-danger text-white rounded p-3 mb-3 d-inline-block"
+                  >
+                    <i class="bi bi-4-circle fs-4"></i>
+                  </div>
+                  <!-- Título de la categoría -->
+                  <h5 class="card-title fw-bold">State</h5>
+                  <!-- Descripción de la categoría -->
+                  <p class="card-text text-muted small">
+                    Estilos para estados de componentes (activo, deshabilitado,
+                    hover, etc.) Cambios de estado con .is-*
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card para Theme -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <!-- Icono de la card -->
+                  <div
+                    class="bg-primary text-white rounded p-3 mb-3 d-inline-block"
+                  >
+                    <i class="bi bi-5-circle fs-4"></i>
+                  </div>
+                  <!-- Título de la categoría -->
+                  <h5 class="card-title fw-bold">Theme</h5>
+                  <!-- Descripción de la categoría -->
+                  <p class="card-text text-muted small">
+                    Estilos relacionados con temas (colores, tipografía) Permite
+                    cambiar apariencia completa del sitio.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card para Responsive -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <!-- Icono de la card -->
+                  <div
+                    class="bg-secondary text-white rounded p-3 mb-3 d-inline-block"
+                  >
+                    <i class="bi bi-phone fs-4"></i>
+                  </div>
+                  <!-- Título de la categoría -->
+                  <h5 class="card-title fw-bold">Responsive</h5>
+                  <!-- Descripción de la categoría -->
+                  <p class="card-text text-muted small">
+                    Media queries y breakpoints para diferentes dispositivos
+                    Adaptación a móvil, tablet y desktop.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estructura de carpetas SMACSS -->
+          <div class="row mt-5">
+            <div class="col-12">
+              <!-- Card para estructura de carpetas -->
+              <div class="card border-0 shadow">
+                <div class="card-header bg-primary text-white">
+                  <!-- Encabezado del ejemplo -->
+                  <h6 class="mb-0">
+                    <i class="bi bi-folder2 me-2"></i>
+                    Estructura de carpetas SMACSS
+                  </h6>
+                </div>
+                <!-- Contenido del ejemplo -->
+                <div class="card-body">
+                  <!-- Pre para código -->
+                  <pre
+                    class="bg-dark text-light p-3 rounded small"
+                  ><span class="text-success">scss/</span>
+├── <span class="text-info">base/</span>
+│   ├── _normalize.scss
+│   ├── _typography.scss
+│   └── _variables.scss
+├── <span class="text-info">layout/</span>
+│   ├── _header.scss
+│   ├── _footer.scss
+│   └── _grid.scss
+├── <span class="text-info">module/</span>
+│   ├── _buttons.scss
+│   ├── _cards.scss
+│   └── _forms.scss
+├── <span class="text-info">state/</span>
+│   └── _state.scss
+├── <span class="text-info">theme/</span>
+│   └── _colors.scss
+└── <span class="text-warning">main.scss</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SECCIÓN BUENAS PRÁCTICAS
+           ========================================== -->
+      <section id="buenas-practicas" class="py-5">
+        <div class="container">
+          <!-- Encabezado de la sección -->
+          <div class="row text-center mb-5">
+            <div class="col">
+              <!-- Título de la sección -->
+              <h2 class="display-5 fw-bold mb-3">
+                <i class="bi bi-star-fill me-2"></i>Buenas Prácticas en CSS
+              </h2>
+              <!-- Descripción de buenas prácticas -->
+              <p class="lead text-muted">
+                Recomendaciones para escribir CSS profesional y mantenible
+              </p>
+            </div>
+          </div>
+
+          <!-- Grid con buenas prácticas -->
+          <div class="row g-4">
+            <!-- Buena práctica 1 -->
+            <div class="col-lg-6">
+              <!-- Card con borde izquierdo -->
+              <div
+                class="card h-100 border-start border-4 border-primary shadow-sm"
+              >
+                <div class="card-body">
+                  <!-- Número y título -->
+                  <h5 class="card-title fw-bold mb-3">
+                    <span class="badge bg-primary me-2">1</span>
+                    Usar nombres significativos
+                  </h5>
+                  <!-- Descripción -->
+                  <p class="card-text text-muted small mb-3">
+                    Los nombres de clases deben ser descriptivos y fáciles de
+                    entender. Evita nombres genéricos como "box" o "container".
+                  </p>
+                  <!-- Ejemplo de código -->
+                  <code class="d-block bg-light p-2 rounded small">
+                    <span class="text-success">/* Bien */</span>
+                    <br />
+                    .card-header { }
+                    <br />
+                    <br />
+                    <span class="text-danger">/* Mal */</span>
+                    <br />
+                    .h { }
+                  </code>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buena práctica 2 -->
+            <div class="col-lg-6">
+              <!-- Card con borde izquierdo -->
+              <div
+                class="card h-100 border-start border-4 border-success shadow-sm"
+              >
+                <div class="card-body">
+                  <!-- Número y título -->
+                  <h5 class="card-title fw-bold mb-3">
+                    <span class="badge bg-success me-2">2</span>
+                    Evitar selectores específicos
+                  </h5>
+                  <!-- Descripción -->
+                  <p class="card-text text-muted small mb-3">
+                    Mantén la especificidad baja para evitar conflictos.
+                    Prefiere clases sobre IDs y selectores complejos.
+                  </p>
+                  <!-- Ejemplo de código -->
+                  <code class="d-block bg-light p-2 rounded small">
+                    <span class="text-success">/* Bien */</span>
+                    <br />
+                    .button { }
+                    <br />
+                    <br />
+                    <span class="text-danger">/* Mal */</span>
+                    <br />
+                    #header .nav ul li a { }
+                  </code>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buena práctica 3 -->
+            <div class="col-lg-6">
+              <!-- Card con borde izquierdo -->
+              <div
+                class="card h-100 border-start border-4 border-warning shadow-sm"
+              >
+                <div class="card-body">
+                  <!-- Número y título -->
+                  <h5 class="card-title fw-bold mb-3">
+                    <span class="badge bg-warning me-2">3</span>
+                    Organizar en componentes
+                  </h5>
+                  <!-- Descripción -->
+                  <p class="card-text text-muted small mb-3">
+                    Divide tu CSS en módulos pequeños y reutilizables. Cada
+                    componente debe ser independiente y autosuficiente.
+                  </p>
+                  <!-- Ejemplo de código -->
+                  <code class="d-block bg-light p-2 rounded small">
+                    <span class="text-info">/* Separar por componentes */</span>
+                    <br />
+                    buttons.css, cards.css, forms.css
+                  </code>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buena práctica 4 -->
+            <div class="col-lg-6">
+              <!-- Card con borde izquierdo -->
+              <div
+                class="card h-100 border-start border-4 border-info shadow-sm"
+              >
+                <div class="card-body">
+                  <!-- Número y título -->
+                  <h5 class="card-title fw-bold mb-3">
+                    <span class="badge bg-info me-2">4</span>
+                    Usar preprocesadores
+                  </h5>
+                  <!-- Descripción -->
+                  <p class="card-text text-muted small mb-3">
+                    SASS/SCSS permite variables, mixins y funciones que hacen el
+                    CSS más mantenible. Compila a CSS limpio.
+                  </p>
+                  <!-- Ejemplo de código -->
+                  <code class="d-block bg-light p-2 rounded small">
+                    <span class="text-info">// Variables SCSS</span>
+                    <br />
+                    $primary: #0d6efd;
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="bg-dark text-white py-5">
+      <div class="container">
+        <!-- Grid footer con 3 columnas -->
+        <div class="row g-4 mb-4">
+          <!-- Columna 1: Información -->
+          <div class="col-md-4">
+            <!-- Título del footer -->
+            <h5 class="fw-bold mb-3">
+              <i class="bi bi-code-slash me-2"></i>CSS Methodologies
+            </h5>
+            <!-- Descripción -->
+            <p class="text-white-50 small">
+              Proyecto educativo que enseña las mejores prácticas en
+              organización de estilos CSS usando BEM, OOCSS, SMACSS y SASS/SCSS.
+            </p>
+          </div>
+
+          <!-- Columna 2: Enlaces rápidos -->
+          <div class="col-md-4">
+            <!-- Título de sección -->
+            <h6 class="fw-bold mb-3">Enlaces Rápidos</h6>
+            <!-- Lista de enlaces -->
+            <ul class="list-unstyled small">
+              <!-- Enlace a BEM -->
+              <li class="mb-2">
+                <a href="#bem" class="text-white-50 text-decoration-none">
+                  BEM
+                </a>
+              </li>
+              <!-- Enlace a OOCSS -->
+              <li class="mb-2">
+                <a href="#oocss" class="text-white-50 text-decoration-none">
+                  OOCSS
+                </a>
+              </li>
+              <!-- Enlace a SMACSS -->
+              <li class="mb-2">
+                <a href="#smacss" class="text-white-50 text-decoration-none">
+                  SMACSS
+                </a>
+              </li>
+              <!-- Enlace a Buenas Prácticas -->
+              <li class="mb-2">
+                <a
+                  href="#buenas-practicas"
+                  class="text-white-50 text-decoration-none"
+                >
+                  Buenas Prácticas
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Redes sociales -->
+          <div class="col-md-4">
+            <!-- Título de sección -->
+            <h6 class="fw-bold mb-3">Conecta Conmigo</h6>
+            <!-- Botones de redes sociales -->
+            <div class="d-flex gap-2">
+              <!-- Botón GitHub -->
+              <a href="#" class="btn btn-outline-light btn-sm" title="GitHub">
+                <i class="bi bi-github"></i>
+              </a>
+              <!-- Botón LinkedIn -->
+              <a href="#" class="btn btn-outline-light btn-sm" title="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <!-- Botón Twitter -->
+              <a href="#" class="btn btn-outline-light btn-sm" title="Twitter">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <!-- Botón CodePen -->
+              <a href="#" class="btn btn-outline-light btn-sm" title="CodePen">
+                <i class="bi bi-code-slash"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Línea divisoria -->
+        <hr class="my-4 bg-white opacity-25" />
+
+        <!-- Fila final con copyright -->
+        <div class="row">
+          <!-- Copyright -->
+          <div
+            class="col-md-6 text-center text-md-start small text-white-50 mb-3 mb-md-0"
+          >
+            <!-- Texto de copyright -->
+            &copy; 2025 Eduardo Javier. Todos los derechos reservados.
+          </div>
+          <!-- Créditos -->
+          <div class="col-md-6 text-center text-md-end small text-white-50">
+            <!-- Texto de créditos -->
+            Desarrollado con
+            <i class="bi bi-heart-fill text-danger"></i>
+            usando Bootstrap 5 y SASS
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================
+         MODAL DE INFORMACIÓN
+         ============================================ -->
+    <!-- Modal que se abre al hacer clic en "Más información" -->
+    <div
+      class="modal fade"
+      id="infoModal"
+      tabindex="-1"
+      aria-labelledby="infoModalLabel"
+      aria-hidden="true"
+    >
+      <!-- Dialog del modal -->
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <!-- Contenido del modal -->
+        <div class="modal-content">
+          <!-- Encabezado del modal -->
+          <div class="modal-header bg-primary text-white">
+            <!-- Título del modal -->
+            <h5 class="modal-title fw-bold" id="infoModalLabel">
+              <i class="bi bi-info-circle me-2"></i>
+              ¿Por qué aprender estas metodologías?
+            </h5>
+            <!-- Botón para cerrar el modal -->
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!-- Cuerpo del modal -->
+          <div class="modal-body">
+            <!-- Párrafo de introducción -->
+            <p>
+              Las metodologías CSS modernas como BEM, OOCSS y SMACSS son
+              <strong>esenciales para el desarrollo profesional</strong>:
+            </p>
+            <!-- Lista de beneficios -->
+            <ul>
+              <!-- Beneficio 1 -->
+              <li class="mb-2">
+                <strong>Escalabilidad:</strong> Permite que tus estilos crezcan
+                sin convertirse en un caos
+              </li>
+              <!-- Beneficio 2 -->
+              <li class="mb-2">
+                <strong>Colaboración:</strong> Otros desarrolladores entienden
+                tu código fácilmente
+              </li>
+              <!-- Beneficio 3 -->
+              <li class="mb-2">
+                <strong>Mantenimiento:</strong> Cambios futuros son más fáciles
+                y seguros
+              </li>
+              <!-- Beneficio 4 -->
+              <li class="mb-2">
+                <strong>Performance:</strong> CSS organizado es más eficiente y
+                se carga más rápido
+              </li>
+              <!-- Beneficio 5 -->
+              <li class="mb-2">
+                <strong>Profesionalismo:</strong> Demuestra que trabajas como un
+                desarrollador senior
+              </li>
+            </ul>
+          </div>
+          <!-- Pie del modal -->
+          <div class="modal-footer">
+            <!-- Botón para cerrar -->
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <!-- Botón de acción principal -->
+            <a href="#bem" class="btn btn-primary" data-bs-dismiss="modal">
+              Ir a BEM
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         SCRIPTS
+         ============================================ -->
+    <!-- Bootstrap JS Bundle (incluye Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Script personalizado -->
+    <script src="ASSETS/js/script.js"></script>
+  </body>
+</html>
